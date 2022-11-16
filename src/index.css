@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+html,
+body {
+  @apply box-border;
+}
+
+html,
+body {
+  @apply m-0 h-screen w-screen p-0;
+}
+
+#root {
+  @apply h-screen w-screen;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold leading-tight first:mt-0;
+}
+
+h1 {
+  @apply text-4xl leading-tight;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+h6 {
+  @apply text-base;
+}
+
+p,
+ul,
+ol,
+dl {
+  @apply leading-relaxed;
+}
+
+input {
+  @apply border-2 border-primary-700 bg-primary-100 p-2 placeholder-primary-400 accent-primary-600 shadow-sm transition-all ease-in invalid:border-red-800 invalid:bg-red-200 out-of-range:border-red-800 out-of-range:bg-red-200 hover:bg-primary-200 hover:accent-primary-700 focus:bg-primary-50 focus:outline-none disabled:border-slate-500 disabled:bg-slate-100 disabled:placeholder-slate-400;
+}
+
+button,
+button[type='button'],
+button[type='reset'],
+button[type='submit'] input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+  @apply inline-flex items-center justify-center border-2 border-primary-700 bg-primary-100 px-4 py-2 transition-colors ease-in hover:bg-primary-200 active:bg-primary-300;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  @apply hover:accent-primary-700;
+}
+
+input[type='range'] {
+  @apply h-2 w-full cursor-pointer appearance-none rounded-lg bg-primary-100;
+}
+
+input[type='submit'],
+button[type='submit'] {
+  @apply bg-primary-500 font-semibold text-white hover:bg-primary-600 active:bg-primary-700;
+}
+
+input[type='color'] {
+  @apply h-12 p-1;
+}
+
+input[type='file']::-webkit-file-upload-button {
+  @apply placeholder-red-400 accent-red-800;
+}
+
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='time'] {
+  @apply text-primary-900;
+}
+
+label {
+  @apply font-semibold;
+}
+
+input:checked + label {
+  @apply pl-2 font-semibold text-primary-900 transition-colors hover:text-primary-800;
+}
+
+select {
+  @apply block w-full rounded border-2 border-purple-700 px-4 py-2 pr-8 shadow hover:bg-primary-200 hover:accent-primary-700 focus:bg-primary-50 focus:outline-none disabled:border-slate-500 disabled:bg-slate-100 disabled:placeholder-slate-400;
+}
+
+.flex > input + button {
+  @apply whitespace-nowrap border-l-0;
+}
