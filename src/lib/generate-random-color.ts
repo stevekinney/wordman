@@ -1,4 +1,5 @@
 import shuffle from 'lodash.shuffle';
+import { block } from './sleep';
 
 const hex = '0123456789ABCDEF'.split('');
 
@@ -9,6 +10,8 @@ const generateRandomColor = () => {
     const [element] = shuffle(hex);
     result += element;
   }
+
+  block(150);
 
   return result;
 };
