@@ -1,4 +1,4 @@
-const GameInput = ({ value, onSubmit, onChange }) => {
+const GameInput = ({ onSubmit, disabled, ...props }) => {
   return (
     <form
       className="flex items-end"
@@ -14,11 +14,12 @@ const GameInput = ({ value, onSubmit, onChange }) => {
           type="text"
           maxLength={6}
           pattern="[a-f|A-F|0-9]{6}"
-          onChange={onChange}
-          value={value}
+          placeholder="C0FF33"
+          disabled={disabled}
+          {...props}
         />
       </label>
-      <button className="whitespace-nowrap" type="submit">
+      <button className="whitespace-nowrap" type="submit" disabled={disabled}>
         Take a Guess
       </button>
     </form>

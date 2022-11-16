@@ -67,7 +67,7 @@ button[type='reset'],
 button[type='submit'] input[type='button'],
 input[type='submit'],
 input[type='reset'] {
-  @apply inline-flex items-center justify-center border-2 border-primary-700 bg-primary-100 px-4 py-2 transition-colors ease-in hover:bg-primary-200 active:bg-primary-300;
+  @apply inline-flex items-center justify-center border-2 border-primary-700 bg-primary-100 px-4 py-2 transition-colors ease-in hover:bg-primary-200 active:bg-primary-300 disabled:opacity-50;
 }
 
 input[type='checkbox'],

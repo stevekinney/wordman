@@ -24,6 +24,7 @@ const Application = () => {
         value={colorGuess}
         onChange={(e) => setColorGuess(e.target.value)}
         onSubmit={() => setHasGuessed(true)}
+        disabled={hasGuessed}
       />
       <GameStatus isWinner={isWinner} hasGuessed={hasGuessed} />
       <button
@@ -32,6 +33,7 @@ const Application = () => {
           setHasGuessed(false);
           setColorGuess('');
         }}
+        type={hasGuessed ? 'submit' : 'button'}
       >
         Reset Color
       </button>
