@@ -4,7 +4,7 @@ import ColorSwatch from './color-swatch';
 import GameInput from './game-input';
 import GameStatus from './game-status';
 
-const Game = () => {
+const Game = ({ children }) => {
   const [colorGuess, setColorGuess] = useState('');
   const [correctAnswer, setCorrectAnswer] = useState(generateRandomColor());
   const [hasGuessed, setHasGuessed] = useState(false);
@@ -19,6 +19,7 @@ const Game = () => {
   return (
     <div className="flex flex-col gap-8">
       <ColorSwatch color={correctAnswer} />
+      {children}
       <GameInput
         value={colorGuess}
         onChange={(e) => setColorGuess(e.target.value)}
