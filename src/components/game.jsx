@@ -15,26 +15,29 @@ const Game = () => {
       setIsWinner(true);
     }
   }
-  <div className="flex flex-col gap-8">
-    <ColorSwatch color={correctAnswer} />
-    <GameInput
-      value={colorGuess}
-      onChange={(e) => setColorGuess(e.target.value)}
-      onSubmit={() => setHasGuessed(true)}
-      disabled={hasGuessed}
-    />
-    <GameStatus isWinner={isWinner} hasGuessed={hasGuessed} />
-    <button
-      onClick={() => {
-        setCorrectAnswer(generateRandomColor());
-        setHasGuessed(false);
-        setColorGuess('');
-      }}
-      type={hasGuessed ? 'submit' : 'button'}
-    >
-      Reset Color
-    </button>
-  </div>;
+
+  return (
+    <div className="flex flex-col gap-8">
+      <ColorSwatch color={correctAnswer} />
+      <GameInput
+        value={colorGuess}
+        onChange={(e) => setColorGuess(e.target.value)}
+        onSubmit={() => setHasGuessed(true)}
+        disabled={hasGuessed}
+      />
+      <GameStatus isWinner={isWinner} hasGuessed={hasGuessed} />
+      <button
+        onClick={() => {
+          setCorrectAnswer(generateRandomColor());
+          setHasGuessed(false);
+          setColorGuess('');
+        }}
+        type={hasGuessed ? 'submit' : 'button'}
+      >
+        Reset Color
+      </button>
+    </div>
+  );
 };
 
 export default Game;
