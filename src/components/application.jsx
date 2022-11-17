@@ -7,7 +7,9 @@ import GameStatus from './game-status';
 
 const Application = () => {
   const [colorGuess, setColorGuess] = useState('');
-  const [correctAnswer, setCorrectAnswer] = useState(generateRandomColor());
+  const [correctAnswer, setCorrectAnswer] = useState(() =>
+    generateRandomColor(),
+  );
   const [hasGuessed, setHasGuessed] = useState(false);
   const [isWinner, setIsWinner] = useState(false);
 
